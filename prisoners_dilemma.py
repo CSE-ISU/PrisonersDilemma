@@ -301,7 +301,7 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     ######        
     #
     elif player == 8:
-        if getting_team_name:
+'''        if getting_team_name:
             #if there was a previous round just like 
             return 'loyal vengeful with permanent second impression'
         else:
@@ -327,9 +327,19 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
                 if history[-1]=='c' and opponent_history[-1]=='b':
                     return 'b' # betray is they were severely punished last time
                 else:
-                    return 'c' #otherwise collude
+                    return 'c' #otherwise collude'''
 
 
+        if getting_team_name:
+            return 'I steal your Cache'
+        elif:
+            size = len(history)
+            if(size%4==0): #the number of rounds played is a multiple of 4
+                return 'c'
+            else:
+                return 'b'
+         '''elif history[-1]=='c' and opponent_history[-1]=='b':
+                return 'b''''
 
 
 
