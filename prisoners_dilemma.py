@@ -172,10 +172,10 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
 
     ######
     ######
-    #
     elif player == 3:
         if getting_team_name:
             return 'loyal vengeful'
+            return 'RW'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
@@ -185,6 +185,14 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
                 return 'b' # betray is they were severely punished last time
             else:
                 return 'c' #otherwise collude
+                if history[-1]=='c' and opponent_history[-1]=='b':
+                    return 'b' # betray is they were severely punished last time
+                if opponent_history[-1]=='b' and opponent_history[-2]=='b':
+                    return 'b'
+                if opponent_history[-1]=='b' and opponent_history[-2]=='b'and opponent_history[-3]=='b':
+                    return 'c'
+                else:
+                    return 'c' #otherwise collude
 
 
 
